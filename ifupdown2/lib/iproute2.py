@@ -284,8 +284,11 @@ class IPRoute2(Cache, Requirements):
     ###
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     def link_add_single_vxlan(self, link_exists, ifname, ip, group, physdev, port, vnifilter="off", ttl=None):
 =======
+=======
+>>>>>>> 73f204e (vxlan: Add support for IPv6 vxlan-local-tunnelip)
     def link_add_single_vxlan(self, link_exists, ifname, ip, group, physdev, port, vnifilter="off", ttl=None, ipversion=4):
         self.logger.info("creating single vxlan device: %s" % ifname)
 
@@ -294,6 +297,9 @@ class IPRoute2(Cache, Requirements):
         if ipversion == 6:
             cmd.append("-6")
 
+<<<<<<< HEAD
+>>>>>>> 73f204e (vxlan: Add support for IPv6 vxlan-local-tunnelip)
+=======
 >>>>>>> 73f204e (vxlan: Add support for IPv6 vxlan-local-tunnelip)
         if link_exists:
             self.logger.info("updating single vxlan device: %s" % ifname)
@@ -305,9 +311,13 @@ class IPRoute2(Cache, Requirements):
             cmd.append("link set dev %s type vxlan" % ifname)
         else:
 <<<<<<< HEAD
+<<<<<<< HEAD
             self.logger.info("creating single vxlan device: %s" % ifname)
 
             cmd = ["link add dev %s type vxlan external" % ifname]
+=======
+            cmd.append("link add dev %s type vxlan external" % ifname)
+>>>>>>> 73f204e (vxlan: Add support for IPv6 vxlan-local-tunnelip)
 =======
             cmd.append("link add dev %s type vxlan external" % ifname)
 >>>>>>> 73f204e (vxlan: Add support for IPv6 vxlan-local-tunnelip)
